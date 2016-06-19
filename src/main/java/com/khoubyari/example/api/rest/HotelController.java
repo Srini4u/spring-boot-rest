@@ -38,7 +38,7 @@ public class HotelController extends AbstractRestHandler {
         response.setHeader("Location", request.getRequestURL().append("/").append(createdHotel.getId()).toString());
     }
 
-    @RequestMapping(value = "",
+    @RequestMapping(value = "/",
             method = RequestMethod.GET,
             produces = {"application/json", "application/xml"})
     @ResponseStatus(HttpStatus.OK)
