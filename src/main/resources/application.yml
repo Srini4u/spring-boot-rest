@@ -13,6 +13,9 @@ spring.datasource:
 
 server:
   port: 8090
+  
+spring.jpa:
+    hibernate.ddl-auto: create  
 
 #todo: make sure to always enable security in production
 security:
