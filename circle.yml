@@ -3,16 +3,22 @@ machine:
     version: oraclejdk8
   services:
     - docker
+    
+environment:
+    # Setting the tag for Docker-hub  | Using Circleci build number to track the deployed code incase of issues
+    #TAG: $CIRCLE_BRANCH-$CIRCLE_SHA1
+    TAG: $CIRCLE_BRANCH-$CIRCLE_BUILD_NUM
+    DOCKER_IMAGE: $DOCKER_USER/$DOCKER_REPO_APP:$TAG    
 
 test:
   override:
     - mvn  package install
     - docker info
-    - docker build -t champ45/spring-boot-app .
+    - docker build -t $DOCKER_IMAGE .
     
 deployment:
   hub:
     branch: master
     commands:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - docker push champ45/spring-boot-app
+      - docker push $DOCKER_IMAGE
