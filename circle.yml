@@ -5,7 +5,7 @@ machine:
   - docker
  environment:
   TAG: $CIRCLE_BRANCH-$CIRCLE_BUILD_NUM
-  DOCKER_IMAGE: champ45/spring-boot-app:$TAG
+  DOCKER_IMAGE: champ45/spring-boot-rest:$TAG
 
 dependencies:
  override:
