@@ -1,22 +1,20 @@
 machine:
-  java:
-    version: oraclejdk8
-  services:
-    - docker
-    
-  #environment:
-    #TAG: $CIRCLE_BRANCH-$CIRCLE_BUILD_NUM
-    #DOCKER_IMAGE: $DOCKER_USER/$DOCKER_REPO_APP:$TAG 
-
-  test:
-  override:
+ services:
+  - docker
+ environment:
+  TAG: $CIRCLE_BRANCH-$CIRCLE_BUILD_NUM
+  DOCKER_IMAGE: $DOCKER_USER/$DOCKER_REPO_APP:$TAG
+dependencies:
+ override:
     - mvn  package install
     - docker info
-    - docker build -t champ45/spring-boot-app:$CIRCLE_BRANCH-$CIRCLE_BUILD_NUM .
-    
-  deployment:
-  hub:
-    branch: master
-    commands:
-      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - docker push champ45/spring-boot-app:$CIRCLE_BRANCH-$CIRCLE_BUILD_NUM
+    - docker build -t $DOCKER_IMAGE .
+test:
+ override:
+    - docker run -d --name $DOCKER_USER -p 8080:8080 $DOCKER_IMAGE; sleep 10
+deployment:
+ hub:
+   branch: master
+   commands:
+     - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+     - docker push $DOCKER_IMAGE
