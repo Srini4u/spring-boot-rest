@@ -2,8 +2,8 @@ machine:
  services:
   - docker
  environment:
-  TAG: $CIRCLE_BRANCH-$CIRCLE_BUILD_NUM
-  DOCKER_IMAGE: $DOCKER_USER/$DOCKER_REPO_APP:$TAG
+  TAG:$CIRCLE_BRANCH-$CIRCLE_BUILD_NUM
+  DOCKER_IMAGE:$DOCKER_USER/$DOCKER_REPO_APP:$TAG
 dependencies:
  override:
     - mvn  package install
