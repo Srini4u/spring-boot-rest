@@ -1,6 +1,6 @@
-# Spring Boot "Microservice" Example Project //
+# Spring Boot "Microservice"
 
-This is a sample Java / Maven / Spring Boot application that can be used as a starter for creating a microservice complete with built-in health check, metrics and much more. I hope it helps you.
+This is a Java / Maven / Spring Boot application for creating a microservice complete with built-in health check, metrics and much more.
 
 ## How to Run 
 
