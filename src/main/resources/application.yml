@@ -8,7 +8,7 @@ spring.jmx:
 spring.datasource:
     driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://159.203.220.71:3306/world
-    username: cherry
+    username: root
     password: admin
 
 server:
