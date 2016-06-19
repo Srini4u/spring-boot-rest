@@ -33,10 +33,10 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         ApiInfo apiInfo = new ApiInfo(
-                "Spring Boot Sample REST APIs",
+                "Spring Boot REST APIs",
                 "The APIs here demonstrate creating a 'production-ready' service built with Spring Boot and other helpful libraries",
                 "http://opensource.org/licenses/MIT",
-                "khoubyari@gmail.com",
+                "seeni45@gmail.com",
                 "MIT",
                 "http://opensource.org/licenses/MIT"
         );
