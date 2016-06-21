@@ -1,11 +1,7 @@
-### This is the main way to configure the application (other than annotations).
-### This fils is in Yaml format but you can also do this using the traditional
 ### Java properties file.
-
 spring:
   profiles.active: dev
 ---
-
 spring:
   profiles: dev
 
@@ -47,20 +43,14 @@ info:
     description: ${project.description}
     version: ${project.version}
 
-#hotel.service:
-  #name: 'default profile:'
+hotel.service:
+  name: 'default profile:'
 ---
 spring:
   profiles: test
   
-spring.datasource:
-    driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://159.203.220.71:3306/world
-    username: root
-    password: admin  
-
 spring.jpa:
     hibernate.ddl-auto: create-drop
 
-#hotel.service:
-  #name: 'test profile:'
+hotel.service:
+  name: 'test profile:'
