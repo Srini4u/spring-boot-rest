@@ -6,12 +6,10 @@ app2:
     image: champ45/spring-boot-rest
     ports:
         - "8090"
-        
 app3:
     image: champ45/spring-boot-rest
     ports:
         - "8091"
-
 nginx1:
     image: champ45/nginx
     ports:
