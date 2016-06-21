@@ -21,8 +21,8 @@ spring.datasource:
 server:
   port: 8090
   
-#spring.jpa:
-    #hibernate.ddl-auto: update  
+spring.jpa:
+    hibernate.ddl-auto: update  
 
 #todo: make sure to always enable security in production
 security:
@@ -37,9 +37,9 @@ management:
 
 #default project info followed by actual injected pom-specified values.
 project:
-  name: spring-boot-rest-example
-  version: 0.1
-  description: boot-example default description
+  name: spring-boot-rest
+  version: 0.3.0
+  description: spring boot docker app
 info:
   build:
     artifact: ${project.artifactId}
@@ -47,8 +47,8 @@ info:
     description: ${project.description}
     version: ${project.version}
 
-hotel.service:
-  name: 'default profile:'
+#hotel.service:
+  #name: 'default profile:'
 ---
 spring:
   profiles: test
@@ -62,5 +62,5 @@ spring.datasource:
 spring.jpa:
     hibernate.ddl-auto: create-drop
 
-hotel.service:
-  name: 'test profile:'
+#hotel.service:
+  #name: 'test profile:'
