@@ -12,6 +12,7 @@ dependencies:
     - mvn  package install
     - docker info
     - docker build -t $DOCKER_IMAGE .
+    - docker build -t champ45/nginx:latest -f DockerfileNginx .
 test:
  override:
     - docker run -d --name $DOCKER_USER -p 8090:8090 $DOCKER_IMAGE; sleep 10
