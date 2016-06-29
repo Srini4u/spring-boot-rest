@@ -113,6 +113,4 @@ Spring Boot is an "opinionated" application bootstrapping framework that makes i
 
 **/env** Exposes properties from Spring’s ConfigurableEnvironment.
 
-**/trace** Displays trace information (by default the last few HTTP requests). 
-
-Testing
+**/trace** Displays trace information (by default the last few HTTP requests).
