@@ -1,4 +1,3 @@
-### Java properties file.
 spring:
   profiles.active: dev
 ---
@@ -50,7 +49,7 @@ spring:
   profiles: test
   
 spring.jpa:
-    hibernate.ddl-auto: create-drop
+    hibernate.ddl-auto: update
 
 hotel.service:
   name: 'test profile:'
