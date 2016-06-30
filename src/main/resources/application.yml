@@ -47,9 +47,22 @@ hotel.service:
 ---
 spring:
   profiles: test
+
+spring.jmx:
+   enabled: false  
+
+spring.datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://159.203.220.71:3306/world
+    username: root
+    password: admin  
   
 spring.jpa:
-    hibernate.ddl-auto: update
+    hibernate.ddl-auto: create-drop
+    
+security:
+  basic:
+    enabled: false    
 
 hotel.service:
   name: 'test profile:'
