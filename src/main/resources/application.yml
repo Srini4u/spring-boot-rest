@@ -3,26 +3,24 @@ spring:
 ---
 spring:
   profiles: dev
-
-spring.jmx:
-   enabled: false
-
-spring.datasource:
-    driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://159.203.220.71:3306/world
-    username: root
-    password: admin
-
-server:
-  port: 8090
-
-#entitymanager.packagesToScan: /
-spring.jpa:
+  jpa:
     database: MYSQL
     show-sql: true
     hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
     hibernate.ddl-auto: update 
     hibernate.show_sql: true
+    #entitymanager.packagesToScan: /
+  datasource:
+    platform: mysql
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://159.203.220.71:3306/world
+    username: root
+    password: admin
+  jmx:
+    enabled: false
+
+server:
+  port: 8090
 
 #todo: make sure to always enable security in production
 security:
@@ -52,17 +50,15 @@ hotel.service:
 ---
 spring:
   profiles: test
-
-spring.jmx:
-   enabled: false  
-
-spring.datasource:
+  jmx:
+    enabled: false  
+  datasource:
+    platform: mysql
     driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://159.203.220.71:3306/world
     username: root
     password: admin  
-
-spring.jpa:
+  jpa:
     database: MYSQL
     show-sql: true
     hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
