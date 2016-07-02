@@ -15,9 +15,14 @@ spring.datasource:
 
 server:
   port: 8090
-  
+
+#entitymanager.packagesToScan: /
 spring.jpa:
-    hibernate.ddl-auto: update  
+    database: MYSQL
+    show-sql: true
+    hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+    hibernate.ddl-auto: update 
+    hibernate.show_sql: true
 
 #todo: make sure to always enable security in production
 security:
@@ -56,10 +61,14 @@ spring.datasource:
     url: jdbc:mysql://159.203.220.71:3306/world
     username: root
     password: admin  
-  
+
 spring.jpa:
-    hibernate.ddl-auto: create-drop
-    
+    database: MYSQL
+    show-sql: true
+    hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+    hibernate.ddl-auto: create-drop 
+    hibernate.show_sql: true
+  
 security:
   basic:
     enabled: false    
