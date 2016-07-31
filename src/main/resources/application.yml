@@ -1,24 +1,12 @@
-spring:
-  profiles.active: dev
----
-spring:
-  profiles: dev
-  jpa:
-    database: MYSQL
-    show-sql: true
-    hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
-    hibernate.ddl-auto: update 
-    hibernate.show_sql: true
-    #entitymanager.packagesToScan: /
-  datasource:
-    platform: mysql
+spring.jmx:
+   enabled: false
+
+spring.datasource:
     driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://159.203.220.71:3306/world
     username: root
     password: admin
-  jmx:
-    enabled: false
-
+    
 server:
   port: 8090
 
@@ -50,24 +38,13 @@ hotel.service:
 ---
 spring:
   profiles: test
-  jmx:
-    enabled: false  
-  datasource:
-    platform: mysql
-    driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://159.203.220.71:3306/world
-    username: root
-    password: admin  
-  jpa:
+  
+spring.jpa:
     database: MYSQL
     show-sql: true
     hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
     hibernate.ddl-auto: create-drop 
     hibernate.show_sql: true
   
-security:
-  basic:
-    enabled: false    
-
 hotel.service:
   name: 'test profile:'
