@@ -40,9 +40,6 @@ spring:
   profiles: test
   
 spring.jpa:
-    database: MYSQL
-    show-sql: true
-    hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
     hibernate.ddl-auto: create-drop 
     hibernate.show_sql: true
   
